@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/hitriylis/frontend-project-46/issues"
   },
-  "homepage": "https://github.com/hitriylis/frontend-project-46#readme"
+  "homepage": "https://github.com/hitriylis/frontend-project-46#readme",
+  "dependencies": {
+    "commander": "^11.0.0"
+  }
 }
