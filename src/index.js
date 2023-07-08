@@ -1,5 +1,7 @@
 import { readFileSync } from 'fs';
 import _ from 'lodash';
+import path from 'path';
+
 
 export default (filepath1, filepath2) => {
     const data1 = readFileSync(filepath1, 'utf-8');
