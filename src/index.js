@@ -33,13 +33,13 @@ const renderTree = (array) => {
   const tree = array.map(({ key, oldValue, value, status }) => {
     switch (status) {
       case 'added':
-        return `  +  ${key}: ${value}`;
+        return `  + ${key}: ${value}`;
       case 'deleted':
-        return `  -  ${key}: ${value}`;
+        return `  - ${key}: ${value}`;
       case 'changed':
-        return `  -  ${key}: ${oldValue}\n  +  ${key}: ${value}`;      
+        return `  - ${key}: ${oldValue}\n  + ${key}: ${value}`;      
       case 'unchanged':
-        return `     ${key}: ${value}`;
+        return `    ${key}: ${value}`;
     }
   });
   return `{\n${tree.join('\n')}\n}`;
