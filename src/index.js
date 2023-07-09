@@ -8,6 +8,9 @@ const makeDiffColl = (obj1, obj2) => {
   const keys = _.sortBy(_.union(keys1, keys2));
 
   const tree = keys.map((key) => {
+    if (_.isPlainObject(obj1[key]) && _.isPlainObject(obj2[key])) {
+      return { key, children: makeDiffColl(obj1[key], obj2[key]), type: 'nested' };
+    }
     if (!Object.hasOwn(obj1, key)) {
       return { key, value: obj2[key], status: 'added' };
     }
@@ -15,24 +18,18 @@ const makeDiffColl = (obj1, obj2) => {
       return { key, value: obj1[key], status: 'deleted' };
     }
     if (obj1[key] !== obj2[key]) {
-      return { key, value: obj1[key], status: 'changed' };
+      return {
+        key, oldValue: obj1[key], newValue: obj2[key], status: 'changed',
+      };
     }
-    if (obj1[key] === obj2[key]) {
-      return { key, value: obj1[key], status: 'unchanged' };
-    }
-    if (_.isPlainObject(obj1[key]) && _.isPlainObject(obj2[key])) {
-      return { key, children: makeDiffColl(obj1[key], obj2[key]), type: 'nested' };
-    }
-    return {
-      key, oldValue: obj1[key], newValue: obj2[key], type: 'changed',
-    };
+    return { key, value: obj1[key], status: 'unchanged' };
   });
   return tree;
 };
 
 const renderDiffTree = (array) => {
   const tree = array.map(({
-    key, oldValue, value, status,
+    key, oldValue, newValue, value, status,
   }) => {
     switch (status) {
       case 'added':
@@ -40,7 +37,7 @@ const renderDiffTree = (array) => {
       case 'deleted':
         return `  - ${key}: ${value}`;
       case 'changed':
-        return `  - ${key}: ${oldValue}\n  + ${key}: ${value}`;
+        return `  - ${key}: ${oldValue}\n  + ${key}: ${newValue}`;
       case 'unchanged':
         return `    ${key}: ${value}`;
       default:
