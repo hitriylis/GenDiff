@@ -11,7 +11,7 @@ console.log('parsedDataFile1:', parsedDataFile1)
 console.log('parsedDataFile2:', parsedDataFile2)
 console.log('____________')
 
-const gendiff = () => {
+const gendiff = (obj1, obj2) => {
   const keys1 = Object.keys(obj1);
   const keys2 = Object.keys(obj2);
   const keys = _.union(keys1, keys2).sort();
