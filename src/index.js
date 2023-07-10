@@ -47,13 +47,16 @@ const renderDiffTree = (array) => {
   return `{\n${tree.join('\n')}\n}`;
 };
 
-const genDiff = (filepath1, filepath2) => {
-  const currentDirectory = process.cwd();
-  const resolvedFilepath1 = path.resolve(currentDirectory, filepath1);
-  const resolvedFilepath2 = path.resolve(currentDirectory, filepath2);
+const readFile = (filePath) => {
+  const fullPath = path.resolve(process.cwd(), '__fixtures__', filePath);
+  const data = readFileSync(fullPath, 'utf8');
+  return data;
+};
 
-  const dataFile1 = readFileSync(resolvedFilepath1, 'utf8');
-  const dataFile2 = readFileSync(resolvedFilepath2, 'utf8');
+const genDiff = (filepath1, filepath2) => {
+  const dataFile1 = readFile(filepath1);
+  const dataFile2 = readFile(filepath2);
+
   const parsedDataFile1 = JSON.parse(dataFile1);
   const parsedDataFile2 = JSON.parse(dataFile2);
 
