@@ -1,9 +1,15 @@
-install
+install:
 	npm ci
 
-gendiff
+gendiff:
 	node bin/gendiff.js
 
-publish
+publish:
 	npm publish --dry-run
+
+lint:
+	npx eslint .
+
+test:
+	npm test
 
