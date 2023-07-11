@@ -8,7 +8,7 @@ const makeDiffColl = (obj1, obj2) => {
   const keys = _.sortBy(_.union(keys1, keys2));
 
   const tree = keys.map((key) => {
-    if (_.isPlainObject(obj1[key]) && _.isPlainObject(obj2[key])) {
+    if (_.isObject(obj1[key]) && _.isObject(obj2[key])) {
       return { key, children: makeDiffColl(obj1[key], obj2[key]), type: 'nested' };
     }
     if (!Object.hasOwn(obj1, key)) {
