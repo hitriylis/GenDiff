@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import { readFileSync } from 'fs';
 import path from 'path';
+import getParse from './parsers.js';
 
 const makeDiffColl = (obj1, obj2) => {
   const keys1 = Object.keys(obj1);
@@ -41,7 +42,7 @@ const renderDiffTree = (array) => {
       case 'unchanged':
         return `    ${key}: ${value}`;
       default:
-        throw new Error('Error');
+        throw new Error('Unknown status');
     }
   });
   return `{\n${tree.join('\n')}\n}`;
@@ -53,12 +54,14 @@ const readFile = (filePath) => {
   return data;
 };
 
+const getExtension = (filename) => path.extname(filename).slice(1);
+
 const genDiff = (filepath1, filepath2) => {
   const dataFile1 = readFile(filepath1);
   const dataFile2 = readFile(filepath2);
 
-  const parsedDataFile1 = JSON.parse(dataFile1);
-  const parsedDataFile2 = JSON.parse(dataFile2);
+  const parsedDataFile1 = getParse(dataFile1, getExtension(filepath1));
+  const parsedDataFile2 = getParse(dataFile2, getExtension(filepath2));
 
   const diffColl = makeDiffColl(parsedDataFile1, parsedDataFile2);
   const diffTree = renderDiffTree(diffColl);
