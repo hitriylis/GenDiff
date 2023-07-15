@@ -50,14 +50,14 @@ npm link
 ```
 
 ## Demonstration
-### Help demonstration:
+### Help:
 <a href="https://asciinema.org/a/oMAxSMdggGW1TSjzzUFRnI9ER" target="_blank"><img src="https://asciinema.org/a/oMAxSMdggGW1TSjzzUFRnI9ER.svg" width="500" /></a>
 
-### Stylish demonstration:
+### Stylish format:
 <a href="https://asciinema.org/a/wVIdRKlpCUZEmoVI6HCSSDNzo" target="_blank"><img src="https://asciinema.org/a/wVIdRKlpCUZEmoVI6HCSSDNzo.svg" width="500" /></a>
 
-### Plain demonstration:
+### Plain format:
 <a href="https://asciinema.org/a/596905" target="_blank"><img src="https://asciinema.org/a/596905.svg" width="500" /></a>
 
-### JSON demostration
+### JSON format:
 <a href="https://asciinema.org/a/596921" target="_blank"><img src="https://asciinema.org/a/596921.svg" width="500" /></a>
