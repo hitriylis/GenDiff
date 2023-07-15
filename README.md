@@ -49,11 +49,15 @@ make install
 npm link
 ```
 
-## Help demonstration:
+## Demonstration
+### Help demonstration:
 <a href="https://asciinema.org/a/oMAxSMdggGW1TSjzzUFRnI9ER" target="_blank"><img src="https://asciinema.org/a/oMAxSMdggGW1TSjzzUFRnI9ER.svg" width="500" /></a>
 
-## Stylish demonstration:
+### Stylish demonstration:
 <a href="https://asciinema.org/a/wVIdRKlpCUZEmoVI6HCSSDNzo" target="_blank"><img src="https://asciinema.org/a/wVIdRKlpCUZEmoVI6HCSSDNzo.svg" width="500" /></a>
 
-## Plain demonstration:
+### Plain demonstration:
 <a href="https://asciinema.org/a/596905" target="_blank"><img src="https://asciinema.org/a/596905.svg" width="500" /></a>
+
+### JSON demostration
+<a href="https://asciinema.org/a/596921" target="_blank"><img src="https://asciinema.org/a/596921.svg" width="500" /></a>
