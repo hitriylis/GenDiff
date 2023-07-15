@@ -1,5 +1,11 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/c3f07a125220375daee5/maintainability)](https://codeclimate.com/github/hitriylis/frontend-project-46/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/c3f07a125220375daee5/test_coverage)](https://codeclimate.com/github/hitriylis/frontend-project-46/test_coverage)
 
-<a href="https://asciinema.org/a/Qzy3ucuaqCNLtTm2S0cLUYrkQ" target="_blank"><img src="https://asciinema.org/a/Qzy3ucuaqCNLtTm2S0cLUYrkQ.svg" width="500" /></a>
-<a href="https://asciinema.org/a/gokKRSSqMQr2aN9ygBfQX2voI" target="_blank"><img src="https://asciinema.org/a/gokKRSSqMQr2aN9ygBfQX2voI.svg" width="500" /></a>
-<a href="https://asciinema.org/a/C4UJrWiYl77sdDEZIMsLenS9L" target="_blank"><img src="https://asciinema.org/a/C4UJrWiYl77sdDEZIMsLenS9L.svg" width="500" /></a>
+
+## Help demonstration:
+<a href="https://asciinema.org/a/oMAxSMdggGW1TSjzzUFRnI9ER" target="_blank"><img src="https://asciinema.org/a/oMAxSMdggGW1TSjzzUFRnI9ER.svg" width="500" /></a>
+
+## Stylish demonstration:
+<a href="https://asciinema.org/a/wVIdRKlpCUZEmoVI6HCSSDNzo" target="_blank"><img src="https://asciinema.org/a/wVIdRKlpCUZEmoVI6HCSSDNzo.svg" width="500" /></a>
+
+## Plain demonstration:
+<a href="https://asciinema.org/a/596905" target="_blank"><img src="https://asciinema.org/a/596905.svg" width="500" /></a>

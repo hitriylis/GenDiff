@@ -1,16 +1,12 @@
 import yaml from 'js-yaml';
 
-const getParse = (file, extension) => {
-  switch (extension) {
-    case 'json':
-      return JSON.parse(file);
-    case 'yaml':
-      return yaml.load(file);
-    case 'yml':
-      return yaml.load(file);
-    default:
-      throw new Error('Unknown extension');
-  }
+const getFileParse = (data, ext) => {
+  const extensions = {
+    json: (fileData) => JSON.parse(fileData),
+    yaml: (fileData) => yaml.load(fileData),
+    yml: (fileData) => yaml.load(fileData),
+  };
+  return !extensions[ext] ? new Error(`Unknown extension: '${ext}'!`) : extensions[ext](data);
 };
 
-export default getParse;
+export default getFileParse;

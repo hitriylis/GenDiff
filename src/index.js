@@ -1,26 +1,30 @@
-import { readFileSync } from 'fs';
 import path from 'path';
-import getParse from './parsers.js';
-import makeAst from './buildAst.js';
+import { readFileSync } from 'fs';
+import getFileParse from './parsers.js';
+import makeTree from './buildASTree.js';
 import formatTree from './formatters/index.js';
 
-const getExtension = (filename) => path.extname(filename).slice(1);
+const getPath = (filename) => path.resolve(process.cwd(), filename);
 
-const readFile = (filePath) => {
-  const fullPath = path.resolve(process.cwd(), filePath);
-  const data = readFileSync(fullPath, 'utf8');
-  return data;
+const getFileType = (filename) => path.extname(filename).slice(1);
+
+const getParsedData = (filePath) => {
+  const fileType = getFileType(filePath);
+  const fileData = readFileSync(filePath, 'utf-8');
+  const parsedData = getFileParse(fileData, fileType);
+  return parsedData;
 };
 
 const genDiff = (filepath1, filepath2, format = 'stylish') => {
-  const dataFile1 = readFile(filepath1);
-  const dataFile2 = readFile(filepath2);
+  const filePath1 = getPath(filepath1);
+  const filePath2 = getPath(filepath2);
 
-  const parsedDataFile1 = getParse(dataFile1, getExtension(filepath1));
-  const parsedDataFile2 = getParse(dataFile2, getExtension(filepath2));
+  const parsedDataFile1 = getParsedData(filePath1);
+  const parsedDataFile2 = getParsedData(filePath2);
 
-  const diffTree = makeAst(parsedDataFile1, parsedDataFile2);
-  return formatTree(diffTree, format);
+  const tree = makeTree(parsedDataFile1, parsedDataFile2);
+
+  return formatTree(tree, format);
 };
 
 export default genDiff;
