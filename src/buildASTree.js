@@ -4,7 +4,7 @@ const makeTree = (obj1, obj2) => {
   const keysData1 = Object.keys(obj1);
   const keysData2 = Object.keys(obj2);
 
-  const keys = _.sortBy(_.union([...keysData1, ...keysData2]));
+  const keys = _.sortBy(_.union(keysData1, keysData2));
 
   const tree = keys.map((key) => {
     if (_.isObject(obj1[key]) && _.isObject(obj2[key])) {

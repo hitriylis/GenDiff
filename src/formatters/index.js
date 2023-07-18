@@ -2,12 +2,16 @@ import makeStylish from './stylish.js';
 import makePlain from './plain.js';
 
 const formatTree = (tree, format) => {
-  const formatters = {
-    plain: makePlain(tree),
-    json: JSON.stringify(tree),
-    stylish: makeStylish(tree),
-  };
-  return !formatters[format] ? new Error(`Unknow format: ${format}!`) : formatters[format];
+  switch (format) {
+    case 'plain':
+      return makePlain(tree);
+    case 'json':
+      return JSON.stringify(tree);
+    case 'stylish':
+      return makeStylish(tree);
+    default:
+      throw new Error(`Unknow format: ${format}!`);
+  }
 };
 
 export default formatTree;
