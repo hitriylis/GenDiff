@@ -1,14 +1,13 @@
+import _ from 'lodash';
+
 const formatValue = (value) => {
-  if (value === null) return null;
-
-  const status = typeof value;
-
-  const statuses = {
-    string: `'${value}'`,
-    object: '[complex value]',
-  };
-
-  return statuses[status] || String(value);
+  if (_.isPlainObject(value)) {
+    return '[complex value]';
+  }
+  if (typeof (value) !== 'string') {
+    return `${value}`;
+  }
+  return `'${value}'`;
 };
 
 const makePlain = (tree) => {
@@ -18,22 +17,22 @@ const makePlain = (tree) => {
         key, value, oldValue, newValue, children, status,
       } = node;
 
-      const accPath = !path ? `${key}` : `${path}.${key}`;
+      const property = !path ? `${key}` : `${path}.${key}`;
 
       switch (status) {
         case 'unupdated':
           return null;
         case 'added':
-          return `Property '${accPath}' was ${status} with value: ${formatValue(value)}\n`;
+          return `Property '${property}' was ${status} with value: ${formatValue(value)}\n`;
         case 'removed':
-          return `Property '${accPath}' was ${status}\n`;
+          return `Property '${property}' was ${status}\n`;
         case 'updated': {
           const value1 = formatValue(oldValue);
           const value2 = formatValue(newValue);
-          return `Property '${accPath}' was ${status}. From ${value1} to ${value2}\n`;
+          return `Property '${property}' was ${status}. From ${value1} to ${value2}\n`;
         }
         case 'nested':
-          return iter(children, accPath);
+          return iter(children, property);
         default:
           throw new Error(`Unknow type ${status}!`);
       }
