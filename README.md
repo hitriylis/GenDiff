@@ -35,13 +35,11 @@ gendiff filepath1.json filepath2.json
 }
 ```
 
+## Requirements
+* Node.js > 18.0
+* Unix OS
+
 ## Install
-```bash
-git clone https://github.com/hitriylis/frontend-project-46
-```
-```bash
-cd frontend-project-46
-```
 ```bash
 make install
 ```
@@ -51,13 +49,13 @@ npm link
 
 ## Demonstration
 ### Help:
-<a href="https://asciinema.org/a/oMAxSMdggGW1TSjzzUFRnI9ER" target="_blank"><img src="https://asciinema.org/a/oMAxSMdggGW1TSjzzUFRnI9ER.svg" width="500" /></a>
+<a href="https://asciinema.org/a/597762" target="_blank"><img src="https://asciinema.org/a/597762.svg" width="500"/></a>
 
 ### Stylish format:
-<a href="https://asciinema.org/a/wVIdRKlpCUZEmoVI6HCSSDNzo" target="_blank"><img src="https://asciinema.org/a/wVIdRKlpCUZEmoVI6HCSSDNzo.svg" width="500" /></a>
+<a href="https://asciinema.org/a/597764" target="_blank"><img src="https://asciinema.org/a/597764.svg" width="500"/></a>
 
 ### Plain format:
-<a href="https://asciinema.org/a/596905" target="_blank"><img src="https://asciinema.org/a/596905.svg" width="500" /></a>
+<a href="https://asciinema.org/a/597765" target="_blank"><img src="https://asciinema.org/a/597765.svg" width="500"/></a>
 
 ### JSON format:
-<a href="https://asciinema.org/a/596921" target="_blank"><img src="https://asciinema.org/a/596921.svg" width="500" /></a>
+<a href="https://asciinema.org/a/597766" target="_blank"><img src="https://asciinema.org/a/597766.svg" width="500"/></a>
