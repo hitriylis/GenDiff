@@ -2,7 +2,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/c3f07a125220375daee5/maintainability)](https://codeclimate.com/github/hitriylis/frontend-project-46/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/c3f07a125220375daee5/test_coverage)](https://codeclimate.com/github/hitriylis/frontend-project-46/test_coverage)
 
 ## Description
-A difference generator - is a program that determines the difference between two data structures.
+The GenDiff (difference generator) - is a program that determines the difference between two data structures.
 
 ### Utility features:
 * Support for different input formats: yaml, json
@@ -37,7 +37,7 @@ gendiff filepath1.json filepath2.json
 
 ## Requirements
 * Node.js > 18.0
-* Unix OS
+* Ubuntu, Macos or WSL (for Windows)
 
 ## Install
 ```bash
