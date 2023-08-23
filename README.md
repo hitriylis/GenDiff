@@ -41,6 +41,9 @@ gendiff filepath1.json filepath2.json
 
 ## Install
 ```bash
+git clone git@github.com:hitriylis/GenDiff
+```
+```bash
 make install
 ```
 ```bash
