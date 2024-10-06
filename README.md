@@ -1,5 +1,5 @@
 # GenDiff
-[![Maintainability](https://api.codeclimate.com/v1/badges/be4dec7e04efac8bf8b0/maintainability)](https://codeclimate.com/github/hitriylis/GenDiff/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/c3f07a125220375daee5/test_coverage)](https://codeclimate.com/github/hitriylis/GenDiff/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/be4dec7e04efac8bf8b0/maintainability)](https://codeclimate.com/github/hitriylis/GenDiff/maintainability)
 
 ## Description
 "GenDiff" (difference generator) - is a program that determines the difference between two data structures.
